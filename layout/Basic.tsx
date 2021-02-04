@@ -20,7 +20,7 @@ export const theme: DefaultTheme = {
   font: "Tinos",
 };
 
-export const GlobalStyle: any = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
