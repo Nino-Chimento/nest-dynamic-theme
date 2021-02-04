@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import BasicLayout from "../layout/Basic";
-
-const Title = styled.h1`
-  color: red;
-`;
+const StyledButton = styled.button``;
 
 const Home = () => {
   return (
     <BasicLayout>
       <p>hello</p>
-      <Title>Title</Title>
+      <div>Title</div>
+      <StyledButton>Prova button</StyledButton>
     </BasicLayout>
   );
 };

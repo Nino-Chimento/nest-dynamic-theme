@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"; // theme.ts
 import { DefaultTheme } from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-export const theme: any = {
+export const theme: DefaultTheme = {
   id: "T_001",
   name: "Light",
   colors: {
