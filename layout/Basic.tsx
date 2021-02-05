@@ -1,26 +1,27 @@
+import { useEffect, useState } from "react";
 import { createGlobalStyle } from "styled-components"; // theme.ts
 import { DefaultTheme } from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-export const theme: DefaultTheme = {
-  id: "T_001",
-  name: "Light",
-  colors: {
-    body: "#c53030",
-    text: "#000000",
-    button: {
-      text: "#FFFFFF",
-      background: "#000000",
+const BasicLayout = ({ children }: { children: any }) => {
+  const [theme, useTheme] = useState({
+    id: "T_001",
+    name: "Light",
+    colors: {
+      body: "#c53030",
+      text: "red",
+      button: {
+        text: "#FFFFFF",
+        background: "#000000",
+      },
+      link: {
+        text: "teal",
+        opacity: 1,
+      },
     },
-    link: {
-      text: "teal",
-      opacity: 1,
-    },
-  },
-  font: "Tinos",
-};
-
-export const GlobalStyle = createGlobalStyle`
+    font: "Tinos",
+  });
+  const GlobalStyle = createGlobalStyle`
     body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
@@ -51,8 +52,15 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.button.text};
   }
 `;
+  console.log(theme);
 
-const BasicLayout = ({ children }: { children: any }) => {
+  useEffect(() => {
+    fetch("http://localhost:3333/data")
+      .then((response) => response.json())
+      .then((data) => useTheme(data));
+  }, []);
+  console.log(theme);
+
   return (
     <>
       <ThemeProvider theme={theme}>

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/json-server": "^0.14.3",
     "@types/styled-components": "^5.1.7",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
