@@ -52,14 +52,12 @@ const BasicLayout = ({ children }: { children: any }) => {
     color: ${({ theme }) => theme.colors.button.text};
   }
 `;
-  console.log(theme);
 
   useEffect(() => {
     fetch("http://localhost:3333/data")
       .then((response) => response.json())
       .then((data) => useTheme(data));
   }, []);
-  console.log(theme);
 
   return (
     <>
