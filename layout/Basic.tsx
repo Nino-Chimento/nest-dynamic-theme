@@ -9,7 +9,7 @@ const BasicLayout = ({ children }: { children: any }) => {
     name: "Light",
     colors: {
       body: "white",
-      text: "black",
+      text: "pink",
       button: {
         text: "#FFFFFF",
         background: "red",
