@@ -8,11 +8,11 @@ const BasicLayout = ({ children }: { children: any }) => {
     id: "T_001",
     name: "Light",
     colors: {
-      body: "#c53030",
-      text: "red",
+      body: "white",
+      text: "black",
       button: {
         text: "#FFFFFF",
-        background: "#000000",
+        background: "red",
       },
       link: {
         text: "teal",
@@ -53,11 +53,11 @@ const BasicLayout = ({ children }: { children: any }) => {
   }
 `;
 
-  useEffect(() => {
-    fetch("http://localhost:3333/data")
-      .then((response) => response.json())
-      .then((data) => useTheme(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3333/data")
+  //     .then((response) => response.json())
+  //     .then((data) => useTheme(data));
+  // }, []);
 
   return (
     <>
